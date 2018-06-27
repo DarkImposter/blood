@@ -9,6 +9,7 @@ attack = 3
 running = True
 death = False
 prog = 0
+
 Loc = 'Nowhere, really.'
 
 
@@ -22,9 +23,12 @@ def dead(prog):
         running = True
 def stat():
     print('your stats are:\ Health = '+str(health)+'\nLocation = '+Loc+'\nAttack = '+str(attack)+'\nLevel = '+str(prog))
+def fight(prog):
+    
 
 while running:
     if prog == 0:
+        prog += 1
         name = input('What is your Name?')
         quest = input('What is your quest?')
         color = input('What is your favorate color?')
@@ -37,4 +41,11 @@ while running:
             print('you have gone on a wild hunt...')
         if t1 == 's' or 'stats':
             stat()
-        prog += 1
+        print('you are ready, '+name+'time for your first adventure!')
+    if prog == 1:
+        msg = 'what would you like to do?'
+    dat = input(msg)
+    if dat == 'h' or 'hunt':
+        fight(prog)
+        
+    
